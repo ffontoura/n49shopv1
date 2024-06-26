@@ -1,33 +1,16 @@
 {
-  "imports": {
-    "site/": "./",
-    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.74.0/",
-    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.47.0/",
-    "$fresh/": "https://deno.land/x/fresh@1.6.8/",
-    "preact": "https://esm.sh/preact@10.19.6",
-    "preact/": "https://esm.sh/preact@10.19.6/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.4.0",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "std/": "https://deno.land/std@0.190.0/",
-    "daisyui": "npm:daisyui@4.4.19",
-    "@deco/htmx": "https://denopkg.com/deco-cx/apps@0.47.0/htmx/mod.ts"
-  },
   "tasks": {
-    "start": "deno task bundle && deno run -A --env --config=deno.json $(deno eval 'console.log(import.meta.resolve(\"deco/hypervisor/main.ts\"))') --build-cmd 'deno task build' -- deno task dev",
+    "start": "deno task bundle && DECO_SITE_NAME=n49shopv1 deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "gen": "deno run -A dev.ts --gen-only",
-    "play": "USE_LOCAL_STORAGE_ONLY=true deno task start",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
     "release": "deno eval 'import \"deco/scripts/release.ts\"'",
-    "update": "deno run -Ar https://deco.cx/update",
+    "update": "deno eval 'import \"deco/scripts/update.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts",
     "install": "deno eval 'import \"deco/scripts/apps/install.ts\"'",
     "uninstall": "deno eval 'import \"deco/scripts/apps/uninstall.ts\"'",
-    "bundle": "deno eval 'import \"deco/scripts/apps/bundle.ts\"' site",
-    "cache_clean": "rm deno.lock; deno cache -r main.ts",
+    "bundle": "deno eval 'import \"deco/scripts/apps/bundle.ts\"' deco-sites/n49shopv1",
     "build": "deno run -A dev.ts build",
-    "preview": "deno run -A main.ts",
-    "dev": "deno run -A --env --unstable --unstable-hmr dev.ts"
+    "preview": "deno run -A main.ts"
   },
   "githooks": {
     "pre-commit": "check"
@@ -36,10 +19,32 @@
     "node_modules",
     "static/",
     "README.md",
-    "_fresh",
-    "**/_fresh/*",
-    ".deco/**"
+    "**/_fresh/*"
   ],
+  "nodeModulesDir": true,
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "experimentalDecorators": true
+  },
+  "imports": {
+    "deco-sites/australroupas/": "./",
+    "deco-sites/fashion/": "./",
+    "$store/": "./",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.26.6/",
+    "$live/": "https://denopkg.com/deco-cx/deco@1.73.0/",
+    "$fresh/": "https://deno.land/x/fresh@1.6.8/",
+    "preact": "https://esm.sh/preact@10.19.2",
+    "preact/": "https://esm.sh/preact@10.19.2/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "std/": "https://deno.land/std@0.190.0/",
+    "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.8/",
+    "daisyui": "npm:daisyui@3.5.0",
+    "deco/": "https://denopkg.com/deco-cx/deco@1.73.0/",
+    "apps/": "https://denopkg.com/deco-cx/apps@0.46.0/"
+  },
   "lint": {
     "rules": {
       "tags": [
@@ -47,11 +52,5 @@
         "recommended"
       ]
     }
-  },
-  "nodeModulesDir": false,
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "experimentalDecorators": true
   }
 }

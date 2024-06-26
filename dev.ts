@@ -1,4 +1,3 @@
-#!/usr/bin/env -S deno run -A --watch
 import "https://deno.land/x/dotenv@v3.2.2/load.ts";
 
 import dev from "$fresh/dev.ts";

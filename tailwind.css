@@ -6,25 +6,36 @@
 
   /* Allow changing font family via CMS */
   html {
-    font-family: var(--font-family);
+    overflow-x: clip;
+    /* font-family: var(--font-family); */ 
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
-  /** Remove default styles from input[type=number] */
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  /** Remove default styles fromnput[type=number] */
+  nput[type=number]::-webkit-inner-spin-button,
+  nput[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  input[type=number] {
+  nput[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
+  }
+
+  body {
+    background-color: white;
+    overflow-x: clip;
+  }
+
+  button:disabled {
+    color: #AEAEB2 !important;
   }
 }
 
 @layer components {
 
-  /** Prevent scroll when modal is open */
+  /** Prevent scroll when modals open */
   .no-scroll {
     overflow: hidden;
     height: 100vh;
@@ -42,4 +53,389 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  .video-banner-full-mobile{
+    height: calc(100vw * (536/414));
+  }
+
+  .video-banner-full-desktop{
+    height: calc(100vw * (700/1920));
+  }
+
+  .banner-small{
+    height: calc(57vw *(239/484)); 
+  }
+
+  li.numeric-0{
+    margin-top: 20px;
+  }
+
+
+  .position-unset{
+    position: unset;
+  }
+
+  .home-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0px auto;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .home-container-mobile {
+    width: 100%;
+    margin: 0px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .no-container {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .breadcrumb-austral ul {
+    display: flex;
+    color: #636366;
+  }
+
+  .breadcrumb-austral ul li::before {
+    content: '>';
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .breadcrumb-austral ul li:first-child::before {
+    content: '';
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  details#footer {
+    max-height: 55px;
+    transition: all 500ms ease-in-out;
+  }
+
+  details#footer[open] {
+    max-height: 250px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  input[type=number]:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  .container-minicart::-webkit-scrollbar {
+    width: 4px;
+    background-color: #fff;
+  }
+
+  .container-minicart::-webkit-scrollbar-thumb {
+    background-color: #8E8E93;
+    border-radius: 2px;
+  }
+
+  .container-minicart::-webkit-scrollbar-track {
+    border: none;
+    background-color: #C7C7CC;
+    border-radius: 2px;
+  }
+
+  .container-filter::-webkit-scrollbar {
+    width: 4px;
+    background-color: #fff;
+  }
+
+  .container-filter::-webkit-scrollbar-thumb {
+    background-color: #8E8E93;
+    border-radius: 2px;
+  }
+
+  .container-filter::-webkit-scrollbar-track {
+    border: none;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  .faq-icon {
+    transition: all 0.15s linear 0s;
+  }
+
+  .faq-icon-plus {
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  .faq-icon-minus {
+    transform: rotate(-180deg) translateY(50%);
+    font-weight: 700 !important;
+  }
+
+  div.checkbox.filterColor[aria-checked="true"] {
+    border-color: #5881CA;
+    background: none;
+  }
+
+  div.checkbox.filterColor[aria-checked="true"] ~ span {
+    color: #5881CA;
+  }
+
+  @keyframes swal2-show {
+    0% {
+      transform: scale(.7);
+    }
+    45% {
+      transform: scale(1.05);
+    }
+    80% {
+      transform: scale(.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes swal2-hide {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(.5);
+      opacity: 0;
+    }
+  }
+
+  .line-clamp2{
+    display: "-webkit-box";
+    -webkit-line-clamp: "2";
+    -webkit-box-orient: "vertical";
+  }
+
+  .containerNavItems:hover + .overlayNavItems {
+    height: 100vh;
+    opacity: .6;
+  }
+
+  .menuModalCheckbox:checked ~ .overlayMenu {
+    left: 0;
+  }
+  .menuModalCheckbox:checked ~ .MenuModal {
+    left: 0;
+  }
+  .menuModalCheckbox:checked ~ .MenuModal [aria-label="Close"] {
+    display: block;
+    opacity: 1;
+  }
+
+  .search-scroll::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .search-scroll::-webkit-scrollbar-thumb {
+    background-color: rgb(99, 99, 102);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
 }
+
+.popupLogin{
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 0 1px 1px #C7C7CC;
+  top: 90%;
+  right: 10px;
+  padding: 15px;
+  min-width: 206px;
+  left: unset;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+.popupLogin::before{    
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: -7px;
+  right: 43px;
+  border-left: 1px solid #C7C7CC;
+  border-top: 1px solid #C7C7CC;
+  transform: rotate(45deg);
+  background: #fff;
+}
+.vtexIdUI button#loginWithAccessKeyBtn {
+  background: #5881CA !important;
+  font-family: 'Lato' !important;
+  border-radius: 6px !important;
+}
+
+button#loginWithAccessKeyBtn::after{
+  display: none !important;
+}
+#vtexIdUI-facebook p span {
+  font-family: 'Lato' !important;
+}
+.vtexIdUI .vtexIdUI-send-email::before{
+  width: 100%;
+}
+button#vtexIdUI-facebook, #vtexIdUI-google-plus, .vtexIdUI {
+  border-radius: 6px !important;
+}
+button#vtexIdUI-facebook{
+  background-color: #2462a8 !important;
+}
+.vtexIdUI #vtexIdUI-facebook::after{
+  top: 20% !important;
+  right: unset !important;
+  left: 30px !important;
+  transform: scale(0.79);
+  transform: scaleY(0.79) !important;
+}
+.vtexIdUI #vtexIdUI-google-plus::after{
+  top: 20% !important;
+  right: unset !important;
+  left: 25px !important;
+}
+.modal-header h4.vtexIdUI-heading span::before{
+  content: 'Entrar ou criar uma conta' !important;
+  font-family: 'Lato' !important;
+}
+.vtexIdUI .vtexIdUI-providers-btn span, .vtexIdUI .vtexIdUI-others-send-email span{
+  font-family: 'Lato' !important;
+}
+button#vtexIdUI-google-plus{
+  background: #e33e2b !important;
+}
+.vtexIdUI button#loginWithUserAndPasswordBtn{
+  background: #fff !important;
+  border: 1px solid #5881CA !important;
+  border-radius: 6px !important;
+  color: #5881CA !important;
+}
+button#loginWithUserAndPasswordBtn::after{
+  display: none !important;
+}
+#vtexIdContainer .vtexIdUI .vtexIdUI-main-content .vtexIdUI-page.vtexIdUI-confirm-email .modal-header h4>span {
+  font-size: 0;
+  line-height: normal;
+  font-family: "Lato" !important;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#vtexIdContainer .vtexIdUI .vtexIdUI-main-content .vtexIdUI-page.vtexIdUI-confirm-email .modal-body .vtexIdUI-email-field:before {
+  display: block;
+  content: "E-mail";
+  font-size: 12px;
+  color: #000;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  font-family: "Lato";
+  font-weight: 400;
+}
+
+.vtexIdUI-page .modal-body .vtexIdUI-email-field input, #vtexIdContainer .vtexIdUI .vtexIdUI-main-content .vtexIdUI-page .modal-body .vtexIdUI-code-field input {
+  height: 48px;
+  line-height: 48px;
+  background: transparent;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  font-size: 12px;
+  color: #3A3A3C;
+  border-radius: 6px;
+}
+
+#vtexIdContainer .vtexIdUI .vtexIdUI-main-content .vtexIdUI-page .modal-footer .btn-success{
+  height: 45px;
+  padding: 12px 10px;
+  border-radius: 6px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  background: #5881CA;
+}
+#vtexIdContainer .vtexIdUI .vtexIdUI-main-content .vtexIdUI-page .modal-footer .vtexIdUI-back-link{
+  color: #5881CA;
+  background: transparent;
+  border: 1px solid #5881CA;
+  height: 45px;
+  padding: 12px 10px;
+  border-radius: 6px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.vtexIdUI-confirm-email .vtexIdUI-heading::before {
+  font-family: Lato !important;
+}
+
+.vtexIdUI-confirm-email button#sendAccessKeyBtn {
+  color: #fff !important;
+  background: #5881CA !important;
+  font-family: Lato !important;
+  border-radius: 6px !important;
+  border-color: #5881CA !important;
+}
+
+.vtexIdUI-classic-login h4 span.vtexIdUI-heading  {
+  font-family: Lato !important;
+}
+
+.vtexIdUI-classic-login button#classicLoginBtn  {
+  color: #fff !important;
+  background: #5881CA !important;
+  font-family: Lato !important;
+  border-radius: 6px !important;
+  border-color: #5881CA !important;
+}
+
+.vtexIdUI .vtexIdUI-classic-login-control input, .vtexIdUI-page .modal-body .vtexIdUI-email-field input {
+  font-family: Lato !important;
+}
+
+#vtexIdUI-form-classic-login .dead-link.pull-right {
+  font-family: Lato !important;
+}
+
+.vtexIdUI-back-link.pull-left.dead-link span{
+  font-family: Lato !important;
+}
+
+.szb-vfr-btns{
+  flex-direction: row-reverse !important;
+  justify-content: flex-end !important;
+}
+#szb-chart-button, #szb-vfr-button{
+  font-family: "Lato" !important;
+}
+
+.accordion-body {
+  display: grid; 
+  grid-template-rows: 0fr;
+  transition: 300ms grid-template-rows linear;
+}
+
+.accordion-body > div {
+  overflow: hidden;
+}
+
+.accordion-body__overflow { overflow: hidden; }

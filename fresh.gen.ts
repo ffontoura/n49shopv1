@@ -3,14 +3,68 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
-
+import * as $deco_autocomplete from "./routes/deco/autocomplete.tsx";
+import * as $deco_newsletter from "./routes/deco/newsletter.tsx";
+import * as $deco_searchseller from "./routes/deco/searchseller.tsx";
+import * as $deco_shippingsimulation from "./routes/deco/shippingsimulation.tsx";
+import * as $AddToCartButton from "./islands/AddToCartButton.tsx";
+import * as $BtnBack from "./islands/BtnBack.tsx";
+import * as $BtnClose from "./islands/BtnClose.tsx";
+import * as $Cart from "./islands/Cart.tsx";
+import * as $Faq from "./islands/Faq.tsx";
+import * as $HeaderButton from "./islands/HeaderButton.tsx";
+import * as $HeaderSearchbar from "./islands/HeaderSearchbar.tsx";
+import * as $MyAccountButton from "./islands/MyAccountButton.tsx";
+import * as $NavigatorShare from "./islands/NavigatorShare.tsx";
+import * as $Newsletter from "./islands/Newsletter.tsx";
+import * as $NotFound from "./islands/NotFound.tsx";
+import * as $OutOfStock from "./islands/OutOfStock.tsx";
+import * as $Overlay from "./islands/Overlay.tsx";
+import * as $ProductCardButton from "./islands/ProductCardButton.tsx";
+import * as $ProductDetails from "./islands/ProductDetails.tsx";
+import * as $ProductGallery from "./islands/ProductGallery.tsx";
+import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
+import * as $SearchControls from "./islands/SearchControls.tsx";
+import * as $ServiceMenu from "./islands/ServiceMenu.tsx";
+import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
+import * as $SliderJS from "./islands/SliderJS.tsx";
+import * as $TalkToUsForm from "./islands/TalkToUsForm.tsx";
+import * as $WishlistButton from "./islands/WishlistButton.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $_app,
+    "./routes/deco/autocomplete.tsx": $deco_autocomplete,
+    "./routes/deco/newsletter.tsx": $deco_newsletter,
+    "./routes/deco/searchseller.tsx": $deco_searchseller,
+    "./routes/deco/shippingsimulation.tsx": $deco_shippingsimulation,
   },
-  islands: {},
+  islands: {
+    "./islands/AddToCartButton.tsx": $AddToCartButton,
+    "./islands/BtnBack.tsx": $BtnBack,
+    "./islands/BtnClose.tsx": $BtnClose,
+    "./islands/Cart.tsx": $Cart,
+    "./islands/Faq.tsx": $Faq,
+    "./islands/HeaderButton.tsx": $HeaderButton,
+    "./islands/HeaderSearchbar.tsx": $HeaderSearchbar,
+    "./islands/MyAccountButton.tsx": $MyAccountButton,
+    "./islands/NavigatorShare.tsx": $NavigatorShare,
+    "./islands/Newsletter.tsx": $Newsletter,
+    "./islands/NotFound.tsx": $NotFound,
+    "./islands/OutOfStock.tsx": $OutOfStock,
+    "./islands/Overlay.tsx": $Overlay,
+    "./islands/ProductCardButton.tsx": $ProductCardButton,
+    "./islands/ProductDetails.tsx": $ProductDetails,
+    "./islands/ProductGallery.tsx": $ProductGallery,
+    "./islands/ProductImageZoom.tsx": $ProductImageZoom,
+    "./islands/SearchControls.tsx": $SearchControls,
+    "./islands/ServiceMenu.tsx": $ServiceMenu,
+    "./islands/ShippingSimulation.tsx": $ShippingSimulation,
+    "./islands/SliderJS.tsx": $SliderJS,
+    "./islands/TalkToUsForm.tsx": $TalkToUsForm,
+    "./islands/WishlistButton.tsx": $WishlistButton,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
